@@ -1,0 +1,90 @@
+<!--
+  Generated template for the CancelPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+        <ion-row>
+                <ion-col>
+                  <ion-title color="primary">Cancel Booking</ion-title>
+                </ion-col>
+              <ion-col>
+                  <button ion-button round outline color="primary" (click)="userLogout()" >Logout</button>
+              </ion-col>
+              </ion-row>
+
+</ion-header>
+
+
+<ion-content class="background">
+    <form *ngIf="cancel" [formGroup]="cancel" (ngCancel)="canceling()">
+    
+      <ion-card>
+        <ion-card-header>Cancelling Bookings
+        </ion-card-header>
+        <ion-card-content>
+    
+          <ion-list no-line>
+ 
+            <ion-item>
+               
+              <ion-input formControlName="fname" [(ngModel)]="fname" type="text" placeholder="First Name"></ion-input>
+            </ion-item>
+  
+            <ion-item *ngIf="cancel.controls.fname.invalid && cancel.controls.fname.dirty">
+                <p>Please enter valid name</p>
+            </ion-item>
+  
+            <ion-item>
+                <ion-input formControlName="lname" [(ngModel)]="lname" type="text" placeholder="Last Name"></ion-input>
+            </ion-item>
+  
+            <ion-item *ngIf="cancel.controls.lname.invalid && cancel.controls.lname.dirty">
+                <p>Please enter valid name</p>
+            </ion-item>
+             
+            
+            <ion-item>
+                <ion-input formControlName="surname" [(ngModel)]="surname" type="text" placeholder="Surname"></ion-input>
+            </ion-item>
+  
+            <ion-item *ngIf="cancel.controls.surname.invalid && cancel.controls.surname.dirty">
+                <p>Please enter valid surname</p>
+            </ion-item>
+  
+            <ion-item>
+                <ion-input  formControlName="contactNo" [(ngModel)]="contactNo" type="number" placeholder="Cell Number"></ion-input>
+            </ion-item>
+  
+            <ion-item *ngIf="cancel.controls.contactNo.invalid && cancel.controls.contactNo.dirty">
+                <p>Please enter valid contact number</p>
+            </ion-item>
+  
+            <ion-item>
+                <ion-input formControlName="email" [(ngModel)]="email" type="email" placeholder="Email"></ion-input>
+            </ion-item>
+  
+            <ion-item *ngIf="cancel.controls.email.invalid && cancel.controls.email.dirty">
+                <p>Please enter valid email address</p>
+            </ion-item>
+  
+            <!-- <ion-item>
+              <ion-input formControlName="reason" [(ngModel)]="reason" type="text" placeholder="Reason for Cancelling"></ion-input>
+            </ion-item>
+
+            <ion-item *ngIf="cancel.controls.reason.invalid && cancel.controls.reason.dirty">
+                <p>Please enter valid reason</p>
+            </ion-item> -->
+
+              <button ion-button round outline color="primary" (click)="clickListner()">Cancel booking</button>
+
+          </ion-list>
+        
+        </ion-card-content>
+    
+      </ion-card>
+  </form>
+  </ion-content>
+  
+  
